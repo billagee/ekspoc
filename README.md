@@ -25,5 +25,9 @@ NAME            TYPE           CLUSTER-IP       EXTERNAL-IP                     
 nginx-service   LoadBalancer   xxx.xx.xx.xxx    xxxx.us-east-2.elb.amazonaws.com   80:30749/TCP   13s
 
 # Test it:
-curl xxxx.us-east-2.elb.amazonaws.com
+THEHOST=$(kubectl get svc nginx-service --template='{{(index .status.loadBalancer.ingress 0).hostname}}')
+curl ${THEHOST}
+
+# Exec a shell:
+kubectl exec -it nginx-< tab autocomplete the pod name > -- /bin/sh
 ```
