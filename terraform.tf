@@ -3,6 +3,13 @@
 
 terraform {
 
+  backend "s3" {
+    bucket  = "ekspoc-terraform-state"
+    key     = "state/terraform.tfstate"
+    region  = "us-east-2"
+    encrypt = true
+  }
+
   # Commented since we're not using HCP terraform
   #
   # cloud {
