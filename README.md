@@ -1,4 +1,4 @@
-# Provision an EKS Cluster
+# Provision an EKS Cluster with Terraform
 
 Based on [Provision an EKS Cluster tutorial](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
 
